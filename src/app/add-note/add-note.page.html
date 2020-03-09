@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nueva cancion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item>
+    <ion-input placeholder="Introducir titulo" [(ngModel)]="note.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-textarea rows="1" [(ngModel)]="note.content" placeholder="Introducir artista"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Introducir url" [(ngModel)]="note.imagen"></ion-input>
+  </ion-item>
+</ion-list>
+  <ion-button color="tertiary" expand="full" (click)="addNote()">Crear</ion-button>
+</ion-content>

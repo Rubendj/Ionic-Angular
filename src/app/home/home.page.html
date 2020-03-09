@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title style="text-align: center;">
+      Spotify
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--
+  <div class="title-block">
+    <div class="heading">LISTA DE CANCIONES</div>
+  </div>
+  -->
+  <ion-searchbar></ion-searchbar>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Canciones</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let note of (notes | async)">
+        <ion-thumbnail slot="start">
+          <img src="{{note.imagen}}">
+        </ion-thumbnail>
+      <ion-label>
+        <h2>{{note.title}}</h2>
+        <p>{{note.content}}</p>
+      </ion-label>
+      <ion-button fill="outline" slot="end" [routerLink]="'/view-note/'+note.id">Ver</ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="'/add-note'" color="tertiary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<ion-footer style="text-align: center;">
+  <ion-toolbar>
+    <ion-title>
+      Yeet
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
